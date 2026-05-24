@@ -1,0 +1,20 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.auth-card {
+  width: 400px;
+  padding: 40px;
+  text-align: center;
+}
+
+.auth-icon {
+  background-color: #f50057;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 40px !important;
+  margin-bottom: 20px;
+}

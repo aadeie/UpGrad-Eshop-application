@@ -1,0 +1,45 @@
+.details-container {
+  padding: 50px 80px;
+}
+
+.details-image {
+  width: 100%;
+  max-width: 400px;
+  object-fit: contain;
+}
+
+.details-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.quantity-chip {
+  height: 35px !important;
+  font-size: 14px !important;
+}
+
+.category-text {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.description-text {
+  margin-top: 30px !important;
+  font-size: 20px !important;
+  font-style: italic;
+  color: #555;
+  line-height: 1.7;
+}
+
+.price-text {
+  margin-top: 30px !important;
+  font-size: 38px !important;
+  color: #f44336;
+}
+
+.quantity-field {
+  margin-top: 30px !important;
+  width: 300px;
+  margin-bottom: 30px !important;
+}

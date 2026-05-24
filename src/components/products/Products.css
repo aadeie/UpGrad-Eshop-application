@@ -1,0 +1,29 @@
+.products-page {
+  background-color: #f1f1f1;
+  min-height: 100vh;
+}
+
+.filters-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.category-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sort-dropdown {
+  min-width: 240px !important;
+  background: white;
+}
+
+.products-grid {
+  padding: 20px;
+  gap: 15px;
+}
