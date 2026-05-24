@@ -1,74 +1,433 @@
-HEAD
-# Getting Started with Create React App
+# upGrad E-Shop Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Full Stack E-Commerce application built using React, Spring Boot, and MongoDB featuring authentication, product management, admin controls, order workflow, responsive Material UI design, and REST APIs.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+# Live Features
 
-### `npm start`
+* JWT Authentication
+* Role Based Access Control
+* Product Search & Filtering
+* Product Sorting
+* Order Workflow
+* MongoDB Integration
+* Responsive Material UI Design
+* Admin Product Management
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Tech Stack
 
-### `npm test`
+## Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* React.js
+* Material UI (MUI)
+* React Router DOM
+* Axios
+* CSS3
 
-### `npm run build`
+## Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Spring Boot
+* Spring Security
+* JWT Authentication
+* REST APIs
+* Maven
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Database
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* MongoDB
+* MongoDB Compass
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Features
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## User Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* User Signup
+* User Login
+* JWT Authentication
+* Browse Products
+* Search Products
+* Filter Products by Category
+* Sort Products
+* Product Details Page
+* Order Placement Workflow
+* Address Management
+* Responsive UI
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Admin Features
 
-## Learn More
+* Add Product
+* Modify Product
+* Delete Product
+* Product Management
+* Admin Controls
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Project Structure
 
-### Code Splitting
+```txt
+upgrad-eshop-app/
+│
+├── src/
+├── public/
+├── screenshots/
+├── backend/
+├── package.json
+├── package-lock.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+# Backend Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 1. Navigate To Backend
 
-### Making a Progressive Web App
+```bash
+cd backend
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 2. Configure MongoDB
 
-### Advanced Configuration
+Make sure MongoDB is installed and running locally.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Default MongoDB URL:
 
-### Deployment
+```properties
+spring.data.mongodb.uri=mongodb://localhost:27017/eshop
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+File Location:
 
-### `npm run build` fails to minify
+```txt
+src/main/resources/application.properties
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# UpGrad-Eshop-application
-Full Stack E-Commerce application built using React, Spring Boot, and MongoDB featuring authentication, product management, admin controls, order flow, responsive Material UI design, and REST APIs.
-57e5447720a4df68699f1e8f6f64c00527ad0e04
+## 3. Install Dependencies
+
+```bash
+mvn clean install
+```
+
+## 4. Run Backend
+
+```bash
+mvn spring-boot:run
+```
+
+Backend runs on:
+
+```txt
+http://localhost:8080
+```
+
+---
+
+# Frontend Setup
+
+## 1. Navigate To Frontend Root
+
+```bash
+cd upgrad-eshop-app
+```
+
+## 2. Install Dependencies
+
+```bash
+npm install
+```
+
+## 3. Start React Application
+
+```bash
+npm start
+```
+
+Frontend runs on:
+
+```txt
+http://localhost:3000
+```
+
+---
+
+# MongoDB Collections
+
+The application automatically creates:
+
+* users
+* products
+* addresses
+* orders
+
+---
+
+# Admin Access
+
+## Create Admin User
+
+Register a user normally using Signup.
+
+Then update MongoDB document:
+
+```json
+"roles": ["ADMIN"]
+```
+
+Example:
+
+```json
+{
+  "firstName": "Admin",
+  "lastName": "User",
+  "email": "admin@eshop.com",
+  "password": "admin123",
+  "roles": ["ADMIN"]
+}
+```
+
+---
+
+# API Endpoints
+
+## Authentication APIs
+
+| Method | Endpoint         | Description   |
+| ------ | ---------------- | ------------- |
+| POST   | /api/auth/signup | Register User |
+| POST   | /api/auth/signin | Login User    |
+
+## Product APIs
+
+| Method | Endpoint           | Description       |
+| ------ | ------------------ | ----------------- |
+| GET    | /api/products      | Get All Products  |
+| GET    | /api/products/{id} | Get Product By ID |
+| POST   | /api/products      | Add Product       |
+| PUT    | /api/products/{id} | Update Product    |
+| DELETE | /api/products/{id} | Delete Product    |
+
+## Address APIs
+
+| Method | Endpoint       | Description       |
+| ------ | -------------- | ----------------- |
+| GET    | /api/addresses | Get All Addresses |
+| POST   | /api/addresses | Add Address       |
+
+## Order APIs
+
+| Method | Endpoint    | Description |
+| ------ | ----------- | ----------- |
+| POST   | /api/orders | Place Order |
+
+---
+
+# Sample Product JSON
+
+```json
+{
+  "name": "iPhone 15 Pro",
+  "category": "Electronics",
+  "price": 139999,
+  "description": "Apple iPhone 15 Pro featuring A17 Pro chip and titanium design.",
+  "manufacturer": "Apple",
+  "availableItems": 25,
+  "imageUrl": "https://images.unsplash.com/photo-1695048133142-1a20484d2569"
+}
+```
+
+---
+
+# Application Screenshots
+
+## Home Page
+
+![Home](screenshots/Home.png)
+
+---
+
+## Login Page
+
+![Login](screenshots/Login.png)
+
+---
+
+## Signup Page
+
+![Signup](screenshots/Signup.png)
+
+---
+
+## Product Categories
+
+![Categories](screenshots/Category.png)
+
+---
+
+## Product Search
+
+![Search](screenshots/Text_Search.png)
+
+---
+
+## Product Sorting
+
+![Sorting](screenshots/Filter.png)
+
+---
+
+## Applied Filters
+
+![Applied Filters](screenshots/Filter_Applied.png)
+
+---
+
+## Product Details Page
+
+![Product Details](screenshots/Product_Details.png)
+
+---
+
+## Create Order
+
+![Create Order](screenshots/Create_Order.png)
+
+---
+
+## Add Address
+
+![Add Address](screenshots/Add_Address.png)
+
+---
+
+## Confirm Order
+
+![Confirm Order](screenshots/Confirm_Order.png)
+
+---
+
+## Admin Product Controls
+
+![Admin UI](screenshots/Admin_UI.png)
+
+---
+
+## Admin Dashboard View
+
+![Admin View](screenshots/Admin_View.png)
+
+---
+
+## MongoDB Database
+
+![MongoDB](screenshots/Mongo_Compass.png)
+
+---
+
+## User Details in MongoDB
+
+![User Details](screenshots/User_Details.png)
+
+---
+
+## Admin Creation via Postman
+
+![Postman Admin](screenshots/Postman_Admin.png)
+
+---
+
+# Deployment
+
+## Frontend Deployment
+
+Recommended Platforms:
+
+* Vercel
+* Netlify
+* GitHub Pages
+
+Build React App:
+
+```bash
+npm run build
+```
+
+---
+
+## Backend Deployment
+
+Recommended Platforms:
+
+* Render
+* Railway
+* Heroku
+
+Build Spring Boot Application:
+
+```bash
+mvn clean package
+```
+
+Generated JAR:
+
+```txt
+target/eshop.jar
+```
+
+Run JAR:
+
+```bash
+java -jar target/eshop.jar
+```
+
+---
+
+# GitHub Upload Steps
+
+## Initialize Git
+
+```bash
+git init
+```
+
+## Add Files
+
+```bash
+git add .
+```
+
+## Commit Changes
+
+```bash
+git commit -m "Initial Commit"
+```
+
+## Connect GitHub Repository
+
+```bash
+git remote add origin YOUR_GITHUB_REPOSITORY_URL
+```
+
+## Push Code
+
+```bash
+git branch -M main
+git push -u origin main
+```
+
+---
+
+# Author
+
+Aditya Sharma
+
+---
+
+# License
+
+This project is developed for educational and learning purposes.
