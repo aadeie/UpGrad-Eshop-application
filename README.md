@@ -1,3 +1,4 @@
+HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# UpGrad-Eshop-application
+Full Stack E-Commerce application built using React, Spring Boot, and MongoDB featuring authentication, product management, admin controls, order flow, responsive Material UI design, and REST APIs.
+57e5447720a4df68699f1e8f6f64c00527ad0e04
